@@ -109,3 +109,85 @@ function updateNavbarVisibility() {
 
 window.addEventListener('scroll', updateNavbarVisibility, { passive: true });
 updateNavbarVisibility();
+
+// Navbar active link tracking by current section
+const navSectionLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+const sections = Array.from(navSectionLinks)
+    .map((link) => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
+
+function setActiveNavLink(sectionId) {
+    navSectionLinks.forEach((link) => {
+        const isActive = link.getAttribute('href') === `#${sectionId}`;
+        link.classList.toggle('active', isActive);
+    });
+}
+
+function updateActiveNavLink() {
+    const scrollPosition = window.scrollY + window.innerHeight * 0.3;
+    let activeSectionId = sections[0]?.id;
+
+    sections.forEach((section) => {
+        if (scrollPosition >= section.offsetTop) {
+            activeSectionId = section.id;
+        }
+    });
+
+    if (activeSectionId) {
+        setActiveNavLink(activeSectionId);
+    }
+}
+
+navSectionLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+        const targetId = link.getAttribute('href').slice(1);
+        setActiveNavLink(targetId);
+    });
+});
+
+window.addEventListener('scroll', updateActiveNavLink, { passive: true });
+updateActiveNavLink();
+
+// Hero typing effect: alternates two phrases continuously
+const heroTyped = document.querySelector('.hero-typed');
+
+if (heroTyped) {
+    const phrases = [
+        'Aspiring Full Stack Developer.',
+        'Business and Fintech Student.',
+        'AI Enthusiast.'
+       
+    ];
+
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function typeHeroLabel() {
+        const currentPhrase = phrases[phraseIndex];
+
+        if (!deleting) {
+            charIndex += 1;
+            heroTyped.textContent = currentPhrase.slice(0, charIndex);
+
+            if (charIndex === currentPhrase.length) {
+                deleting = true;
+                setTimeout(typeHeroLabel, 1400);
+                return;
+            }
+        } else {
+            charIndex -= 1;
+            heroTyped.textContent = currentPhrase.slice(0, charIndex);
+
+            if (charIndex === 0) {
+                deleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+            }
+        }
+
+        const delay = deleting ? 35 : 60;
+        setTimeout(typeHeroLabel, delay);
+    }
+
+    typeHeroLabel();
+}
