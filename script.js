@@ -1,3 +1,32 @@
+// Project Modals
+document.querySelectorAll('.btn-view-details[data-modal]').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const modal = document.getElementById(btn.dataset.modal);
+        if (modal) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    });
+});
+
+function closeModal(modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeModal(overlay);
+    });
+    overlay.querySelector('.modal-close').addEventListener('click', () => closeModal(overlay));
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.active').forEach(closeModal);
+    }
+});
+
 // Page Loader
 window.addEventListener('load', () => {
     setTimeout(() => {

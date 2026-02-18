@@ -89,12 +89,9 @@
                     </div>
                     <h3 class="project-title">BridgeGen</h3>
                     <p class="project-description">
-                        A comprehensive full-stack dashboard for tracking personal finances, investments, and portfolio performance with real-time data visualization and advanced analytics.
+                        A full-stack community platform bridging the generational gap, where elderly and youth users connect through shared stories, local events, and real-time chat in a safe digital space.
                     </p>
-                    <div class="project-links">
-                        <a href="#" class="project-link">View Project →</a>
-                        <a href="#" class="project-link">GitHub →</a>
-                    </div>
+                    <a href="javascript:void(0)" class="btn-view-details" data-modal="modal-bridgegen">View Details →</a>
                 </div>
             </div>
 
@@ -110,10 +107,7 @@
                     <p class="project-description">
                         Real-time market data analysis and visualization platform with predictive analytics, algorithmic trading signals, and customizable technical indicators.
                     </p>
-                    <div class="project-links">
-                        <a href="#" class="project-link">View Project →</a>
-                        <a href="#" class="project-link">GitHub →</a>
-                    </div>
+                    <a href="javascript:void(0)" class="btn-view-details" data-modal="modal-market">View Details →</a>
                 </div>
             </div>
 
@@ -129,10 +123,7 @@
                     <p class="project-description">
                         Decentralized finance protocol built on Ethereum, featuring smart contracts for lending, staking, and yield farming with comprehensive security audits.
                     </p>
-                    <div class="project-links">
-                        <a href="#" class="project-link">View Project →</a>
-                        <a href="#" class="project-link">GitHub →</a>
-                    </div>
+                    <a href="javascript:void(0)" class="btn-view-details" data-modal="modal-defi">View Details →</a>
                 </div>
             </div>
 
@@ -148,10 +139,7 @@
                     <p class="project-description">
                         Enterprise-level payment processing system with multi-currency support, fraud detection, and seamless integration with major payment providers.
                     </p>
-                    <div class="project-links">
-                        <a href="#" class="project-link">View Project →</a>
-                        <a href="#" class="project-link">GitHub →</a>
-                    </div>
+                    <a href="javascript:void(0)" class="btn-view-details" data-modal="modal-payment">View Details →</a>
                 </div>
             </div>
 
@@ -286,6 +274,80 @@
     <footer>
         <p>© 2026 Jacob Lee. Crafted with passion and code.</p>
     </footer>
+
+    <!-- Project Modals -->
+    <div class="modal-overlay" id="modal-bridgegen">
+        <div class="modal-box">
+            <button class="modal-close">✕</button>
+            <div class="modal-image">
+                <img src="images/bridgegenchat.png" alt="BridgeGen">
+            </div>
+            <div class="modal-body">
+                <h2 class="modal-title">BridgeGen</h2>
+                <p class="modal-subtitle">Intergenerational Community Platform</p>
+                <p class="modal-desc">A full-stack web application designed to foster meaningful connections between different generations. Built with Flask and SQLite on the back-end, it features secure user authentication, full CRUD operations for community posts, and a responsive UI powered by Bootstrap.</p>
+                <div class="modal-tags">
+                    <span class="tag"><i class="devicon-flask-original colored"></i> Flask</span>
+                    <span class="tag"><i class="devicon-sqlite-plain colored"></i> SQLite</span>
+                    <span class="tag"><i class="devicon-bootstrap-plain colored"></i> Bootstrap</span>
+                    <span class="tag"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+                    <span class="tag"><i class="devicon-css3-plain colored"></i> CSS</span>
+                    <span class="tag"><i class="devicon-html5-plain colored"></i> HTML</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-market">
+        <div class="modal-box">
+            <button class="modal-close">✕</button>
+            <div class="modal-image modal-image-emoji">📊</div>
+            <div class="modal-body">
+                <h2 class="modal-title">Market Analytics Platform</h2>
+                <p class="modal-subtitle">Real-Time Financial Intelligence</p>
+                <p class="modal-desc">Real-time market data analysis and visualization platform with predictive analytics, algorithmic trading signals, and customizable technical indicators. Built for finance professionals and enthusiasts who need fast, accurate insights.</p>
+                <div class="modal-tags">
+                    <span class="tag"><i class="devicon-python-plain colored"></i> Python</span>
+                    <span class="tag"><i class="devicon-fastapi-plain colored"></i> FastAPI</span>
+                    <span class="tag"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-defi">
+        <div class="modal-box">
+            <button class="modal-close">✕</button>
+            <div class="modal-image modal-image-emoji">🔗</div>
+            <div class="modal-body">
+                <h2 class="modal-title">DeFi Protocol</h2>
+                <p class="modal-subtitle">Decentralized Finance on Ethereum</p>
+                <p class="modal-desc">Decentralized finance protocol built on Ethereum, featuring smart contracts for lending, staking, and yield farming. Includes comprehensive security audits and transparent on-chain governance to ensure trustless, permissionless access for all users.</p>
+                <div class="modal-tags">
+                    <span class="tag">⟠ Solidity</span>
+                    <span class="tag">🌐 Web3.js</span>
+                    <span class="tag">💎 Ethereum</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-payment">
+        <div class="modal-box">
+            <button class="modal-close">✕</button>
+            <div class="modal-image modal-image-emoji">🚀</div>
+            <div class="modal-body">
+                <h2 class="modal-title">Payment Gateway Integration</h2>
+                <p class="modal-subtitle">Enterprise Payment Processing</p>
+                <p class="modal-desc">Enterprise-level payment processing system with multi-currency support, fraud detection, and seamless integration with major payment providers including Stripe. Features real-time transaction monitoring and automated reconciliation for high-volume businesses.</p>
+                <div class="modal-tags">
+                    <span class="tag"><i class="devicon-nextjs-plain"></i> Next.js</span>
+                    <span class="tag"><i class="devicon-typescript-plain colored"></i> TypeScript</span>
+                    <span class="tag">💳 Stripe</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
