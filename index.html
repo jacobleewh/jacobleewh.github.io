@@ -81,7 +81,7 @@
         <h2 class="section-title reveal">Featured Projects</h2>
         <div class="projects-grid">
             <div class="project-card reveal">
-                <div class="project-image"><img src="images/brdigegen.png" alt="Financial Dashboard" style="width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:1;"></div>
+                <div class="project-image"><img src="images/brdigegen.png" alt="Financial Dashboard" style="width:100%;height:100%;object-fit:contain;display:block;position:relative;z-index:1;background:#0a0a14;"></div>
                 <div class="project-content">
                     <div class="project-tags">
                         <span class="tag"><i class="devicon-flask-original colored"></i> Flask</span>
@@ -97,7 +97,7 @@
             </div>
 
             <div class="project-card reveal">
-                <div class="project-image"><img src="images/uxd.png" alt="Market Analytics Platform" style="width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:1;"></div>
+                <div class="project-image"><img src="images/uxd.png" alt="Market Analytics Platform" style="width:100%;height:100%;object-fit:contain;display:block;position:relative;z-index:1;background:#0a0a14;"></div>
                 <div class="project-content">
                     <div class="project-tags">
                         <span class="tag"><i class="devicon-html5-plain colored"></i> HTML</span>
@@ -113,32 +113,32 @@
             </div>
 
             <div class="project-card reveal">
-                <div class="project-image">🔗</div>
+                <div class="project-image"><img src="images/pw.png" alt="Password Generator" style="width:100%;height:100%;object-fit:contain;display:block;position:relative;z-index:1;background:#0a0a14;"></div>
                 <div class="project-content">
                     <div class="project-tags">
-                        <span class="tag">Solidity</span>
-                        <span class="tag">Web3.js</span>
-                        <span class="tag">Ethereum</span>
+                        <span class="tag"><i class="devicon-python-plain colored"></i> Python</span>
+                        <span class="tag"><i class="devicon-html5-plain colored"></i> HTML</span>
+                        <span class="tag"><i class="devicon-css3-plain colored"></i> CSS</span>
                     </div>
-                    <h3 class="project-title">DeFi Protocol</h3>
+                    <h3 class="project-title">Password Generator</h3>
                     <p class="project-description">
-                        Decentralized finance protocol built on Ethereum, featuring smart contracts for lending, staking, and yield farming with comprehensive security audits.
+                        A secure password generator that creates strong, randomised passwords with customisable length and character options to help users stay protected online.
                     </p>
                     <a href="javascript:void(0)" class="btn-view-details" data-modal="modal-defi">View Details →</a>
                 </div>
             </div>
 
             <div class="project-card reveal">
-                <div class="project-image">🚀</div>
+                <div class="project-image"><img src="images/dino.png" alt="Dinosaur Game" style="width:100%;height:100%;object-fit:contain;display:block;position:relative;z-index:1;background:#0a0a14;"></div>
                 <div class="project-content">
                     <div class="project-tags">
-                        <span class="tag">Next.js</span>
-                        <span class="tag">TypeScript</span>
-                        <span class="tag">Stripe</span>
+                        <span class="tag"><i class="devicon-html5-plain colored"></i> HTML</span>
+                        <span class="tag"><i class="devicon-css3-plain colored"></i> CSS</span>
+                        <span class="tag"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
                     </div>
-                    <h3 class="project-title">Payment Gateway Integration</h3>
+                    <h3 class="project-title">Dinosaur Game</h3>
                     <p class="project-description">
-                        Enterprise-level payment processing system with multi-currency support, fraud detection, and seamless integration with major payment providers.
+                        A browser-based endless runner game inspired by the classic Chrome dino game, featuring obstacle dodging, increasing difficulty, and a high score tracker.
                     </p>
                     <a href="javascript:void(0)" class="btn-view-details" data-modal="modal-payment">View Details →</a>
                 </div>
@@ -268,15 +268,18 @@
     <div class="modal-overlay" id="modal-defi">
         <div class="modal-box">
             <button class="modal-close">✕</button>
-            <div class="modal-image modal-image-emoji">🔗</div>
+            <div class="modal-image">
+                <img src="images/pw.png" alt="Password Generator">
+            </div>
             <div class="modal-body">
-                <h2 class="modal-title">DeFi Protocol</h2>
-                <p class="modal-subtitle">Decentralized Finance on Ethereum</p>
-                <p class="modal-desc">Decentralized finance protocol built on Ethereum, featuring smart contracts for lending, staking, and yield farming. Includes comprehensive security audits and transparent on-chain governance to ensure trustless, permissionless access for all users.</p>
+                <h2 class="modal-title">Password Generator</h2>
+                <p class="modal-subtitle">Secure Password Generation Tool</p>
+                <p class="modal-desc">A Python-based password generator designed to help users create strong, randomised passwords instantly. Users can customise the password length and choose to include uppercase letters, numbers, and special characters to match any security requirement.</p>
+                <p class="modal-desc">The tool prioritises simplicity and security — generating cryptographically random passwords to eliminate weak or reused credentials. Built with a clean HTML/CSS front-end interface, it provides a straightforward experience for anyone looking to improve their online security.</p>
                 <div class="modal-tags">
-                    <span class="tag">⟠ Solidity</span>
-                    <span class="tag">🌐 Web3.js</span>
-                    <span class="tag">💎 Ethereum</span>
+                    <span class="tag"><i class="devicon-python-plain colored"></i> Python</span>
+                    <span class="tag"><i class="devicon-html5-plain colored"></i> HTML</span>
+                    <span class="tag"><i class="devicon-css3-plain colored"></i> CSS</span>
                 </div>
             </div>
         </div>
@@ -285,15 +288,18 @@
     <div class="modal-overlay" id="modal-payment">
         <div class="modal-box">
             <button class="modal-close">✕</button>
-            <div class="modal-image modal-image-emoji">🚀</div>
+            <div class="modal-image">
+                <img src="images/dino.png" alt="Dinosaur Game">
+            </div>
             <div class="modal-body">
-                <h2 class="modal-title">Payment Gateway Integration</h2>
-                <p class="modal-subtitle">Enterprise Payment Processing</p>
-                <p class="modal-desc">Enterprise-level payment processing system with multi-currency support, fraud detection, and seamless integration with major payment providers including Stripe. Features real-time transaction monitoring and automated reconciliation for high-volume businesses.</p>
+                <h2 class="modal-title">Dinosaur Game</h2>
+                <p class="modal-subtitle">Browser-Based Endless Runner Game</p>
+                <p class="modal-desc">A fun browser-based endless runner game inspired by the classic Chrome offline dino game. The player controls a dinosaur that must jump over oncoming obstacles, with the game speed gradually increasing to raise the difficulty the longer you survive.</p>
+                <p class="modal-desc">Built entirely with vanilla HTML, CSS, and JavaScript, the game uses the Canvas API for rendering and handles game loop logic, collision detection, and score tracking — all without any external libraries or frameworks.</p>
                 <div class="modal-tags">
-                    <span class="tag"><i class="devicon-nextjs-plain"></i> Next.js</span>
-                    <span class="tag"><i class="devicon-typescript-plain colored"></i> TypeScript</span>
-                    <span class="tag">💳 Stripe</span>
+                    <span class="tag"><i class="devicon-html5-plain colored"></i> HTML</span>
+                    <span class="tag"><i class="devicon-css3-plain colored"></i> CSS</span>
+                    <span class="tag"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
                 </div>
             </div>
         </div>
