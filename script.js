@@ -1,3 +1,35 @@
+// Twinkling Stars
+function spawnStar() {
+    const star = document.createElement('div');
+    star.classList.add('shooting-star');
+
+    // Random position across entire screen
+    star.style.left = (Math.random() * window.innerWidth) + 'px';
+    star.style.top  = (Math.random() * window.innerHeight) + 'px';
+
+    // Random size between 2px and 5px
+    const size = 2 + Math.random() * 3;
+    star.style.width  = size + 'px';
+    star.style.height = size + 'px';
+
+    // Randomly accent green or white
+    const green = Math.random() > 0.5;
+    star.style.background = green ? '#00FFA3' : '#ffffff';
+    star.style.boxShadow = green
+        ? `0 0 ${size * 2}px ${size}px rgba(0,255,163,0.6)`
+        : `0 0 ${size * 2}px ${size}px rgba(255,255,255,0.4)`;
+
+    const duration = 0.8 + Math.random() * 1.4;
+    star.style.animationDuration = duration + 's';
+
+    document.body.appendChild(star);
+    setTimeout(() => star.remove(), (duration + 0.1) * 1000);
+
+    // Schedule next star
+    setTimeout(spawnStar, 300 + Math.random() * 700);
+}
+setTimeout(spawnStar, 600);
+
 // Project Modals
 document.querySelectorAll('.btn-view-details[data-modal]').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -176,6 +208,24 @@ navSectionLinks.forEach((link) => {
 
 window.addEventListener('scroll', updateActiveNavLink, { passive: true });
 updateActiveNavLink();
+
+// Stack items scroll-reveal with stagger per row
+const stackItems = document.querySelectorAll('.stack-item');
+
+const stackObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const row = entry.target.closest('.stack-row');
+            const siblings = row ? Array.from(row.querySelectorAll('.stack-item')) : [entry.target];
+            const idx = siblings.indexOf(entry.target);
+            entry.target.style.animationDelay = (idx * 0.08) + 's';
+            entry.target.classList.add('visible');
+            stackObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.15 });
+
+stackItems.forEach(item => stackObserver.observe(item));
 
 // Hero typing effect: alternates two phrases continuously
 const heroTyped = document.querySelector('.hero-typed');

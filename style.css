@@ -251,7 +251,6 @@ nav.nav-visible {
     background-clip: text;
     text-shadow: 0 0 80px var(--glow);
     text-align: center;
-    transform: translateX(-16px);
     opacity: 0;
     animation: fadeInUp 0.8s ease 0.15s forwards;
 }
@@ -1228,6 +1227,102 @@ footer {
     .cursor-follower {
         display: none;
     }
+}
+
+/* ── Tools & Stack Grid ── */
+@keyframes stackFadeIn {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.stack-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 0 1rem;
+}
+
+.stack-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.stack-group-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: rgba(0, 255, 163, 0.55);
+    padding-left: 0.75rem;
+    border-left: 2px solid rgba(0, 255, 163, 0.35);
+}
+
+.stack-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.stack-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.8rem;
+    background: rgba(0, 255, 163, 0.04);
+    border: 1px solid rgba(0, 255, 163, 0.18);
+    border-radius: 999px;
+    cursor: default;
+    opacity: 0;
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.stack-item.visible {
+    animation: stackFadeIn 0.5s ease forwards;
+}
+
+.stack-item:hover {
+    background: rgba(0, 255, 163, 0.1);
+    border-color: var(--accent);
+    box-shadow: 0 0 18px rgba(0, 255, 163, 0.25);
+    transform: translateY(-4px);
+}
+
+.stack-item i {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.stack-item h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.1rem;
+}
+
+.stack-item p {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0;
+}
+
+/* ── Twinkling Stars ── */
+.shooting-star {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    animation: star-pop ease-in-out forwards;
+}
+
+@keyframes star-pop {
+    0%   { opacity: 0;   transform: scale(0); }
+    25%  { opacity: 1;   transform: scale(1); }
+    60%  { opacity: 0.9; transform: scale(1.3); }
+    100% { opacity: 0;   transform: scale(0); }
 }
 
 /* ── Project Modals ── */
