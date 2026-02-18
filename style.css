@@ -746,6 +746,9 @@ section {
     border: 1px solid rgba(0, 255, 163, 0.2);
     transition: all 0.3s ease;
     letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
 }
 
 .tag:hover {
